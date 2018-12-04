@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+</head>
+<body style="overflow: visible !important; background-image: url('/img/bg.png');">
+
+<!--
+background: linear-gradient(to top right, #0091D0, #87888A);
+  background: -webkit-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -moz-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -ms-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: -o-linear-gradient(45deg, #085078 10%, #85d8ce 90%);
+  background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);  
+  -->
+<style>
+/*
+body {
+  overflow: visible !important;
+  #background: linear-gradient(to right, orange, cyan, cyan, cyan, cyan, cyan, cyan, cyan, orange, red, black);
+  background: linear-gradient(to top right, white, #e8ceb9);
+    );
+ }
+ */
+</style>
+
+<div class="container" style="margin-top: 10px; margin-left: 0px; padding-left: 0px; width:800px; height:50px;">
+	<div class="progress" style="position: absolute;width: 100%; border-radius: 0px;">
+		<div id="salat0" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: #007eff;">
+		</div>
+		<div id="salat1" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: #ffa500c7;">
+			<span style="font-weight:bold;color: black;font-size: 15px;">الصبح</span>
+		</div>
+		<div id="salat2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: #00BCD4;">
+			<span style="font-weight:bold;color: black;font-size: 15px;">الظهر</span>
+		</div>
+		<div id="salat3" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: #FF9800;">
+			<span style="font-weight:bold;color: black;font-size: 15px;">العصر</span>
+		</div>
+		<div id="salat4" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: #cc7272;">
+			<span style="font-weight:bold;color: black;font-size: 15px;">المغرب</span>
+		</div>
+		<div id="salat5" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: #061194;">
+			<span style="font-weight:bold;color: white;font-size: 15px;">العشاء</span>
+		</div>
+	</div>	
+	<div class="progress" style="width: 100%; z-index: 10; position: absolute; height: 23px; margin: -1px; padding: 0px; background-color: transparent; text-color: blue;">
+		<div id="hourBar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: black; border-color: black; border-style: inset; opacity: 0.7;">
+			<span id="currentHour"></span>&nbsp;<i class="fa fa-clock"></i>
+		</div>
+	</div>
+	<div class="progress" style="position: absolute; width: 100%; margin-top: 20px; background-color: transparent;">
+		<div id="divSalatTime1" style="color: black;text-align: right;width: 1px; display:inline-block; background-color: transparent;">
+			<span id="salatTime1" style="font-weight:bold;">--:--</span>
+		</div>
+		<div id="divSalatTime2" style="color: black;text-align: right;width: 1px; display:inline-block; background-color: transparent;">
+			<span id="salatTime2" style="font-weight:bold;">--:--</span>
+		</div>
+		<div id="divSalatTime3" style="color: black;text-align: right; display:inline-block; background-color: transparent;">
+			<span id="salatTime3" style="font-weight:bold;">--:--</span>
+		</div>
+		<div id="divSalatTime4" style="color: black;text-align: right; display:inline-block; background-color: transparent;">
+			<span id="salatTime4" style="font-weight:bold;">--:--</span>
+		</div>
+		<div id="divSalatTime5" style="color: black;text-align: right; display:inline-block; background-color: transparent;">
+			<span id="salatTime5" style="font-weight:bold;">--:--</span>
+		</div>
+		<div id="divSalatTime6" style="color: black;text-align: right; display:inline-block; background-color: transparent;">
+			<span id="salatTime5" style="font-weight:bold;">&nbsp;</span>
+		</div>
+		<!--class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" -->
+	</div>
+</div>
+<footer>
+  <p style="text-align: right;border-color: black;margin-bottom: 0px;font-size: 10px;padding-right: 4px;">Copyright 2018, Rabat-Morocco</p>
+</footer>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

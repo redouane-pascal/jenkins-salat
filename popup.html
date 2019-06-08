@@ -18,6 +18,52 @@ background: linear-gradient(to top right, #0091D0, #87888A);
   background: linear-gradient(45deg, #085078 10%, #85d8ce 90%);  
   -->
 <style>
+.box {
+  position: relative;
+}
+.ribbon {
+  position: absolute;
+  left: -5px; top: -15px;
+  z-index: 11;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #3F5705;
+  background: linear-gradient(#9BC90D 0%, #3F5705 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px; left: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #3F5705;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #3F5705;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #3F5705;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #3F5705;
+}
 /*
 body {
   overflow: visible !important;
@@ -27,8 +73,14 @@ body {
  }
  */
 </style>
+<!--
+<div class="box">
+   <div class="ribbon"><span>Beta</span></div>
+</div>
+-->
+<div class="box container" style="margin-top: 10px; margin-left: 0px; padding-left: 0px; width:800px; height:50px;">
 
-<div class="container" style="margin-top: 10px; margin-left: 0px; padding-left: 0px; width:800px; height:50px;">
+	<div class="ribbon"><span>Beta</span></div>
 	<div class="progress" style="position: absolute;width: 100%; border-radius: 0px;">
 		<div id="salat0" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: #007eff;">
 		</div>
@@ -76,10 +128,11 @@ body {
 	</div>
 </div>
 <footer>
-  <p style="text-align: right;border-color: black;margin-bottom: 0px;font-size: 10px;padding-right: 4px;">Copyright 2018, Rabat-Morocco</p>
+  <p id="infos" style="text-align: right;border-color: black;margin-bottom: 0px;font-size: 10px;padding-right: 4px;">Copyright 2018, Rabat-Morocco_v0.1</p>
 </footer>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/momentJS.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

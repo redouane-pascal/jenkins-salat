@@ -4,11 +4,14 @@
   "manifest_version": 2,
   "description": "The first extension that I made.",
   "browser_action": {
-    "default_icon": "img/icon.png",
+    "default_icon": "img/ico.png",
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["js/jquery-3.1.1.min.js", "js/bootstrap.min.js", "js/background.js"]
+    "scripts": ["js/jquery-3.1.1.min.js", "js/bootstrap.min.js", "js/background.js", "js/momentJS.js"]
+  },	
+  "icons": {
+    "128" : "img/ico.png"
   },
   "permissions": [	
 	"storage",
@@ -18,7 +21,4 @@
 	"https://*/*",
     "notifications"
   ]
-}	
-/*,
-    "persistent": false
-*/
+}

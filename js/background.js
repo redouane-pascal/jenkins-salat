@@ -159,58 +159,6 @@ function showNotify() {
 
 				// Ajouter la date du jour au local Storage
 				localStorage.setItem("dayNotif", currentDay);		
-		
-				if( (sobh) && (dohr) && (asr) && (maghreb) && (isha) ){
-					var timeTillNextSalat = "(-_-)";
-					var now = new Date();		
-					var hour = isha.split(":")[0];
-					var minute = isha.split(":")[1];
-					var millisTillSalatIsha = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;	
-					if(millisTillSalatIsha > 0){	
-						// Isha Time
-						timeTillNextSalat = millisTillSalatIsha;
-						hour = maghreb.split(":")[0];
-						minute = maghreb.split(":")[1];
-						var millisTillSalatMaghreb = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;	
-						if(millisTillSalatMaghreb > 0){	
-							// Maghreb Time
-							timeTillNextSalat = millisTillSalatMaghreb;
-							hour = asr.split(":")[0];
-							minute = asr.split(":")[1];
-							var millisTillSalatAsr = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;			
-							if(millisTillSalatAsr > 0){	
-								// Asr Time
-								timeTillNextSalat = millisTillSalatAsr;
-								hour = dohr.split(":")[0];
-								minute = dohr.split(":")[1];
-								var millisTillSalatDohr = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;	
-								if(millisTillSalatDohr > 0){	
-									// Dohr Time	
-									timeTillNextSalat = millisTillSalatDohr;		
-									hour = sobh.split(":")[0];
-									minute = sobh.split(":")[1];
-									var millisTillSalatSobh = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;
-									if(millisTillSalatSobh > 0){	
-										// Sobh Time
-										timeTillNextSalat = millisTillSalatSobh;
-									}	
-								}
-							}
-						}	
-					}
-
-					if(timeTillNextSalat != '(-_-)'){					
-						chrome.browserAction.setBadgeText({text: msToTime(timeTillNextSalat)});
-						var badgeColor = "green"; 
-						if(timeTillNextSalat < 900000){
-							badgeColor = "red";
-						}	
-						chrome.browserAction.setBadgeBackgroundColor({color: badgeColor});
-					}else{
-						chrome.browserAction.setBadgeText({text: ''});	
-					}
-							
-				}
 						
 			});
 		}

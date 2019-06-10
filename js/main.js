@@ -42,27 +42,22 @@ function showBar(){
 		//"Copyright 2018, Rabat-Morocco_v0.1"
 	});
 
-	//var sobh = "06:29";
 	var minSobh = getMinuteByPrayerTime(sobh);
 	var percentSobh = getPercentByMinPrayerTime(minSobh);
 	$("#salat0").width(percentSobh + "%");
 	
-	//var dohr = "13:17";
 	var minDohr = getMinuteByPrayerTime(dohr);
 	var percentDohr = getPercentByMinPrayerTime(minDohr-minSobh);
 	$("#salat1").width(percentDohr + "%");
 	
-	//var asr = "16:03";
 	var minAsr = getMinuteByPrayerTime(asr);
 	var percentAsr = getPercentByMinPrayerTime(minAsr-minDohr);
 	$("#salat2").width(percentAsr + "%");
 	
-	//var maghreb = "18:27";
 	var minMaghreb = getMinuteByPrayerTime(maghreb);
 	var percentMaghreb = getPercentByMinPrayerTime(minMaghreb-minAsr);
 	$("#salat3").width(percentMaghreb + "%");
 	
-	//var isha = "19:45";
 	var minIsha = getMinuteByPrayerTime(isha);
 	var percentIsha = getPercentByMinPrayerTime(minIsha-minMaghreb);
 	$("#salat4").width(percentIsha + "%");
@@ -81,15 +76,40 @@ function showBar(){
 	document.getElementById("salatTime2").textContent = dohr;
 	document.getElementById("salatTime3").textContent = asr;
 	document.getElementById("salatTime4").textContent = maghreb;
-	document.getElementById("salatTime5").textContent = isha;		
-	
+	document.getElementById("salatTime5").textContent = isha;
+
+	let badgeText = "";
+	let diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(sobh, ['h:m a', 'H:m']));
+	if(diffNowToNextPrayer > 0 ){
+		diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(dohr, ['h:m a', 'H:m']));
+		if(diffNowToNextPrayer > 0 ){
+			diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(asr, ['h:m a', 'H:m']));
+			if(diffNowToNextPrayer > 0 ){
+				diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(maghreb, ['h:m a', 'H:m']));
+				if(diffNowToNextPrayer > 0 ){
+					diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(isha, ['h:m a', 'H:m']));
+					if(diffNowToNextPrayer > 0 ){						
+						badgeText = "...";
+					}						
+				}
+			}
+		}
+	}
+	var badgeColor = "green"; 
+	if(diffNowToNextPrayer < 900000){
+		badgeColor = "red";
+	}	
+	chrome.browserAction.setBadgeBackgroundColor({color: badgeColor});
+	badgeText = badgeText != "..." ? moment.utc(0-diffNowToNextPrayer).format("HH:mm") : "";
+	chrome.browserAction.setBadgeText({text: badgeText});
+
+		
 	percentSobh = (parseFloat(percentSobh) + 2.16).toFixed(2);
 	$("#divSalatTime1").width(percentSobh + "%");				
 	$("#divSalatTime2").width((parseFloat(percentDohr) - 0.4).toFixed(2) + "%");
 	$("#divSalatTime3").width((parseFloat(percentAsr) - 0.4).toFixed(2) + "%");
 	$("#divSalatTime4").width((parseFloat(percentMaghreb) - 0.4).toFixed(2) + "%");
 	$("#divSalatTime5").width((parseFloat(percentIsha) - 0.4).toFixed(2) + "%");
-		
 
 }
 

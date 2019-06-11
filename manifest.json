@@ -19,6 +19,7 @@
 	"activeTab",  
 	"http://*/*",
 	"https://*/*",
-    "notifications"
+    "notifications",
+    "alarms"
   ]
 }

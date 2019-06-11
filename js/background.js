@@ -1,60 +1,6 @@
 let cityId = 0;
 var sobh, dohr, asr, maghreb, isha;
 
-function checkZero(data){
-  if(data.length == 1){
-	data = "0" + data;
-  }
-  return data;
-}	
-
-function msToTime(duration) {
-	if(duration == '(-_-)'){
-		return duration;
-	}
-	var minutes = parseInt((duration / (1000 * 60)) % 60),
-	hours = parseInt((duration / (1000 * 60 * 60)) % 24);
-
-	hours = (hours < 10) ? "0" + hours : hours;
-	minutes = (minutes < 10) ? "0" + minutes : minutes;
-
-	return hours + ":" + minutes;
-}
-
-function getCurrentDate(){
-	var today = new Date();
-	var day = today.getDate() + "";
-	var month = (today.getMonth() + 1) + "";
-	var year = today.getFullYear() + "";
-
-	day = checkZero(day);
-	month = checkZero(month);
-	year = checkZero(year);
-
-	console.log(day + "/" + month + "/" + year);
-	return day + "/" + month + "/" + year;
-}
-
-function getCurrentMonth(){
-	let today = new Date();
-	let month = (today.getMonth() + 1) + "";
-
-	console.log("currentMonth = " + month);
-	return month;
-}
-
-function addTenMinute(t) {
-	if(t.indexOf(':') > -1){
-		var h = parseInt(t.split(':')[0]);
-		var m = parseInt(t.split(':')[1]);
-		m = m + 10;
-		if(m > 59){
-			m = m - 60;
-			h = (h + 1) % 24;
-		}
-		return checkZero(h)+":"+checkZero(m);
-	}
-}
 
 function createNotification(prayerTime, salat, titre, isRappel){
 	//alert("isRappel:"+isRappel);
@@ -121,13 +67,13 @@ function showNotify() {
 					maghreb = localStorage.getItem("Maghreb");
 			if(localStorage.getItem("Isha") != undefined)		
 					isha = localStorage.getItem("Isha");
+			setBadgeText();
 		}else if(!dayNotif){
 			let currentMonth = getCurrentMonth();  // 6;
 			let prayerTimes = {};
 			fetch('https://maroc-salat.herokuapp.com/prayer?cityId='+cityId+'&month='+currentMonth+'&day=8&lang=fr')
 			.then(response => response.json())
-			.then(data => {	
-				console.log(data[0].fajr);
+			.then(data => {
 				prayerTimes = data[0];
 
 				sobh = prayerTimes.fajr;
@@ -158,59 +104,9 @@ function showNotify() {
 				createNotification(sobh, 'Sobh', "موعد إقامة صلاة الصبح", 1);
 
 				// Ajouter la date du jour au local Storage
-				localStorage.setItem("dayNotif", currentDay);		
-		
-				if( (sobh) && (dohr) && (asr) && (maghreb) && (isha) ){
-					var timeTillNextSalat = "(-_-)";
-					var now = new Date();		
-					var hour = isha.split(":")[0];
-					var minute = isha.split(":")[1];
-					var millisTillSalatIsha = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;	
-					if(millisTillSalatIsha > 0){	
-						// Isha Time
-						timeTillNextSalat = millisTillSalatIsha;
-						hour = maghreb.split(":")[0];
-						minute = maghreb.split(":")[1];
-						var millisTillSalatMaghreb = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;	
-						if(millisTillSalatMaghreb > 0){	
-							// Maghreb Time
-							timeTillNextSalat = millisTillSalatMaghreb;
-							hour = asr.split(":")[0];
-							minute = asr.split(":")[1];
-							var millisTillSalatAsr = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;			
-							if(millisTillSalatAsr > 0){	
-								// Asr Time
-								timeTillNextSalat = millisTillSalatAsr;
-								hour = dohr.split(":")[0];
-								minute = dohr.split(":")[1];
-								var millisTillSalatDohr = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;	
-								if(millisTillSalatDohr > 0){	
-									// Dohr Time	
-									timeTillNextSalat = millisTillSalatDohr;		
-									hour = sobh.split(":")[0];
-									minute = sobh.split(":")[1];
-									var millisTillSalatSobh = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, minute, 0, 0) - now;
-									if(millisTillSalatSobh > 0){	
-										// Sobh Time
-										timeTillNextSalat = millisTillSalatSobh;
-									}	
-								}
-							}
-						}	
-					}
+				localStorage.setItem("dayNotif", currentDay);
 
-					if(timeTillNextSalat != '(-_-)'){					
-						chrome.browserAction.setBadgeText({text: msToTime(timeTillNextSalat)});
-						var badgeColor = "green"; 
-						if(timeTillNextSalat < 900000){
-							badgeColor = "red";
-						}	
-						chrome.browserAction.setBadgeBackgroundColor({color: badgeColor});
-					}else{
-						chrome.browserAction.setBadgeText({text: ''});	
-					}
-							
-				}
+				setBadgeText();
 						
 			});
 		}
@@ -232,8 +128,112 @@ function showNotify() {
   // At last, if the user has denied notifications, and you 
   // want to be respectful there is no need to bother them any more.
 }
-  
-// Repeat every 30 seconds
+
+function checkZero(data){
+	if(data.length == 1){
+		data = "0" + data;
+	}
+	return data;
+}
+
+function msToTime(duration) {
+	var minutes = parseInt((duration / (1000 * 60)) % 60),
+		hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+
+	hours = (hours < 10) ? "0" + hours : hours;
+	minutes = (minutes < 10) ? "0" + minutes : minutes;
+
+	return hours + ":" + minutes;
+}
+
+function getCurrentDate(){
+	var today = new Date();
+	var day = today.getDate() + "";
+	var month = (today.getMonth() + 1) + "";
+	var year = today.getFullYear() + "";
+
+	day = checkZero(day);
+	month = checkZero(month);
+	year = checkZero(year);
+
+	return day + "/" + month + "/" + year;
+}
+
+function getCurrentHour(){
+	var today = new Date();
+	var h = today.getHours() + "";
+	var m = today.getMinutes() + "";
+
+	h = checkZero(h);
+	m = checkZero(m);
+
+	return h + ":" + m;
+}
+
+function getCurrentMonth(){
+	let today = new Date();
+	let month = (today.getMonth() + 1) + "";
+
+	console.log("currentMonth = " + month);
+	return month;
+}
+
+function addTenMinute(t) {
+	if(t.indexOf(':') > -1){
+		var h = parseInt(t.split(':')[0]);
+		var m = parseInt(t.split(':')[1]);
+		m = m + 10;
+		if(m > 59){
+			m = m - 60;
+			h = (h + 1) % 24;
+		}
+		return checkZero(h)+":"+checkZero(m);
+	}
+}
+function diffHours(h1, h2){
+	var date1 = new Date(getCurrentDate()+' '+h1);
+	var date2 = new Date(getCurrentDate()+' '+h2);
+	return date1-date2;
+}
+
+function formatDiffHour(diff){
+	var diffInHours = checkZero(Math.floor(((diff/1000)/60)/60)+"");
+	var diffInMinutes = checkZero(Math.floor(((diff/1000)/60) - 60*diffInHours)+"");
+	return diffInHours+':'+diffInMinutes;
+}
+
+function setBadgeText(){
+	let badgeText = "";
+	let currentHour = getCurrentHour();
+	let diffNowToNextPrayer = diffHours(currentHour, sobh);
+	if(diffNowToNextPrayer > 0 ){
+		diffNowToNextPrayer = diffHours(currentHour, dohr);
+		if(diffNowToNextPrayer > 0 ){
+			diffNowToNextPrayer = diffHours(currentHour, asr);
+			if(diffNowToNextPrayer > 0 ){
+				diffNowToNextPrayer = diffHours(currentHour, maghreb);
+				if(diffNowToNextPrayer > 0 ){
+					diffNowToNextPrayer = diffHours(currentHour, isha);
+					if(diffNowToNextPrayer > 0 ){
+						badgeText = "...";
+					}
+				}
+			}
+		}
+	}
+	diffNowToNextPrayer *= -1;
+	var badgeColor = "green";
+	if(diffNowToNextPrayer < 900000){
+		badgeColor = "red";
+	}
+	chrome.browserAction.setBadgeBackgroundColor({color: badgeColor});
+	badgeText = badgeText != "..." ? formatDiffHour(diffNowToNextPrayer) : "";
+	chrome.browserAction.setBadgeText({text: badgeText});
+
+	console.log("badgeText = " + badgeText);
+}
+
+// Repeat every 10 seconds
 setInterval(function(){	
 	showNotify();
 }, 10000);

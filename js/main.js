@@ -10,10 +10,14 @@ let nbMinutesToDisplay = 60*(maxHour - minHour);
 
 function init() {
 	showBar();
-	setInterval(showBar, 30000);
-} 
+	//window.setInterval(showBar, 30000);
+}
 
-// Calculer le nombre de minutes entre l'heure de la prière [prayerTime] et minHour du matin
+/**
+ * Calculer le nombre de minutes entre l'heure de la prière [prayerTime] et minHour du matin
+ * @param prayerTime
+ * @returns {number}
+ */
 function getMinuteByPrayerTime(prayerTime){
 	if( (prayerTime) && (prayerTime != null) ){
 		var minPrayerTime = parseInt(prayerTime.split(":")[0])*60+parseInt(prayerTime.split(":")[1]);
@@ -21,17 +25,22 @@ function getMinuteByPrayerTime(prayerTime){
 		return minPrayerTime;
 	}
 }
-// Calculer le pourcentage des minutes par rapport à 9 (21:00 - 06:00 = 15h => 15 * 60min = 900min => 900 / 100 = 9)
-// Calculer le pourcentage des minutes par rapport à  (03:00 - 24:00 = 21h => 21 * 60min = 1260min => 1260 / 100 = 12.6)
+
+/**
+ * Calculer le pourcentage des minutes par rapport à 9 (21:00 - 06:00 = 15h => 15 * 60min = 900min => 900 / 100 = 9)
+ * @param minPrayerTime
+ * @returns {string}
+ */
 function getPercentByMinPrayerTime(minPrayerTime){
 	var percentPrayerTime = 100 * minPrayerTime / nbMinutesToDisplay;
 	percentPrayerTime = percentPrayerTime.toFixed(2);
 	return percentPrayerTime;
-}	
+}
 
-// Afficher le timeline
+/**
+ * Afficher le timeline
+ */
 function showBar(){
-
 	
 	let cityId = localStorage.getItem('cityId');
 	fetch('https://maroc-salat.herokuapp.com/city/'+cityId+'?lang=fr')
@@ -78,32 +87,6 @@ function showBar(){
 	document.getElementById("salatTime4").textContent = maghreb;
 	document.getElementById("salatTime5").textContent = isha;
 
-	let badgeText = "";
-	let diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(sobh, ['h:m a', 'H:m']));
-	if(diffNowToNextPrayer > 0 ){
-		diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(dohr, ['h:m a', 'H:m']));
-		if(diffNowToNextPrayer > 0 ){
-			diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(asr, ['h:m a', 'H:m']));
-			if(diffNowToNextPrayer > 0 ){
-				diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(maghreb, ['h:m a', 'H:m']));
-				if(diffNowToNextPrayer > 0 ){
-					diffNowToNextPrayer = moment(currentHour, ['h:m a', 'H:m']).diff(moment(isha, ['h:m a', 'H:m']));
-					if(diffNowToNextPrayer > 0 ){						
-						badgeText = "...";
-					}						
-				}
-			}
-		}
-	}
-	var badgeColor = "green"; 
-	if(diffNowToNextPrayer < 900000){
-		badgeColor = "red";
-	}	
-	chrome.browserAction.setBadgeBackgroundColor({color: badgeColor});
-	badgeText = badgeText != "..." ? moment.utc(0-diffNowToNextPrayer).format("HH:mm") : "";
-	chrome.browserAction.setBadgeText({text: badgeText});
-
-		
 	percentSobh = (parseFloat(percentSobh) + 2.16).toFixed(2);
 	$("#divSalatTime1").width(percentSobh + "%");				
 	$("#divSalatTime2").width((parseFloat(percentDohr) - 0.4).toFixed(2) + "%");

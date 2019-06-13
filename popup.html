@@ -64,6 +64,26 @@ background: linear-gradient(to top right, #0091D0, #87888A);
   border-bottom: 3px solid transparent;
   border-top: 3px solid #3F5705;
 }
+.showParam {
+	position: relative;
+	animation-name: aller;
+	animation-duration: 2s;
+}
+@keyframes aller {
+	0%   {top:-90px;}
+	100%  {top:-10px;}
+}
+.hideParam {
+	position: relative;
+	animation-name: retour;
+	animation-duration: 1s;
+}
+@keyframes retour {
+	0%  {top:-10px;}
+	100% {top:-90px;}
+}
+
+
 /*
 body {
   overflow: visible !important;
@@ -99,7 +119,7 @@ body {
 		<div id="salat5" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: #061194;">
 			<span style="font-weight:bold;color: white;font-size: 15px;">العشاء</span>
 		</div>
-	</div>	
+	</div>
 	<div class="progress" style="width: 100%; z-index: 10; position: absolute; height: 23px; margin: -1px; padding: 0px; background-color: transparent; text-color: blue;">
 		<div id="hourBar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="background-color: black; border-color: black; border-style: inset; opacity: 0.7;">
 			<span id="currentHour"></span>&nbsp;<i class="fa fa-clock"></i>
@@ -126,13 +146,250 @@ body {
 		</div>
 		<!--class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" -->
 	</div>
+
+	<div id="divParam" style="background-image: linear-gradient(to right, rgb(126, 203, 127), rgb(51, 122, 183));position: absolute;z-index: 12;overflow: hidden;width: 200px;height: 74px;border-style: groove;border-color: rgb(0, 152, 3);top: -90px;" class="hideParam">
+		<div class="form-group" style="width: 90%; margin-left: auto; margin-right: auto; font-family: monospace;">
+			<a href="#" style="position: absolute; margin-top: 5px; margin-left: -6px;"><span id="closeBtn" class="glyphicon glyphicon-remove"></span></a>
+			<label for="sel1" style="direction: rtl; width: 100%; margin: 4px; font-size: 16px;">المدينة :</label>
+			<select class="form-control" style="direction: rtl; font-size: 18px; font-weight: bold;" id="choosedCity">
+				<option value="37">آزرو</option>
+				<option value="86">آزمور</option>
+				<option value="92">آسفي</option>
+				<option value="19">أرفود</option>
+				<option value="65">أزيلال</option>
+				<option value="94">أسا</option>
+				<option value="54">أصيلا</option>
+				<option value="85">أقا</option>
+				<option value="95">أكادير</option>
+				<option value="14">أكنول</option>
+				<option value="107">ألنيف</option>
+				<option value="109">أوسرد</option>
+				<option value="35">إفران</option>
+				<option value="33">إموزار كندر</option>
+				<option value="108">ابي الجعد</option>
+				<option value="111">اشتوكة آيت باه</option>
+				<option value="87">اغرام</option>
+				<option value="88">الجديدة</option>
+				<option value="41">الحاجب</option>
+				<option value="15">الحسيمة</option>
+				<option value="55">الخميسات</option>
+				<option value="105">الداخلة</option>
+				<option value="80">الدار البيضاء</option>
+				<option value="23">الراشدية</option>
+				<option value="69">الرباط وسلا</option>
+				<option value="68">الرماني</option>
+				<option value="24">الريش</option>
+				<option value="20">الريصاني</option>
+				<option value="93">الزاك</option>
+				<option value="101">السمارة</option>
+				<option value="97">الصويرة</option>
+				<option value="57">العرائش</option>
+				<option value="103">العيون</option>
+				<option value="116">الفقيه بن صالح</option>
+				<option value="112">الفنيدق</option>
+				<option value="50">القصر الكبير</option>
+				<option value="67">القنيطرة</option>
+				<option value="75">الكارة</option>
+				<option value="106">الكويرة</option>
+				<option value="76">المحمدية</option>
+				<option value="25">المنزل بني يازغة</option>
+				<option value="8">الناظور</option>
+				<option value="89">اليوسفبة</option>
+				<option value="78">برشيد</option>
+				<option value="5">بركان</option>
+				<option value="73">بن سليمان</option>
+				<option value="82">بنكرير</option>
+				<option value="62">بني ملال</option>
+				<option value="12">بوتاجيت</option>
+				<option value="104">بوجدور</option>
+				<option value="18">بورد</option>
+				<option value="74">بوزنيقة</option>
+				<option value="3">بوعرفة</option>
+				<option value="10">بوعنان</option>
+				<option value="28">بولمان</option>
+				<option value="90">تارودانت</option>
+				<option value="17">تازة</option>
+				<option value="91">تافراوت</option>
+				<option value="81">تالوين</option>
+				<option value="13">تانديت</option>
+				<option value="22">تاهلة</option>
+				<option value="7">تاوريرت</option>
+				<option value="26">تاونات</option>
+				<option value="96">تزنيت</option>
+				<option value="40">تطوان</option>
+				<option value="34">تنجداد</option>
+				<option value="110">تنغير</option>
+				<option value="47">تيزي وسلي</option>
+				<option value="27">تيسة</option>
+				<option value="61">تيفلت</option>
+				<option value="4">جرادة</option>
+				<option value="70">خريبكة</option>
+				<option value="45">خنيفرة</option>
+				<option value="72">دمنات</option>
+				<option value="49">زاكورة</option>
+				<option value="42">زرهون</option>
+				<option value="39">سبتة</option>
+				<option value="79">سطات</option>
+				<option value="53">سوق أربعاء الغرب</option>
+				<option value="99">سيدي إفني</option>
+				<option value="52">سيدي سليمان</option>
+				<option value="46">سيدي قاسم</option>
+				<option value="60">سيدي يحيى الغرب</option>
+				<option value="38">شفشاون</option>
+				<option value="113">صخورالرحامنة</option>
+				<option value="30">صفرو</option>
+				<option value="83">طاطا</option>
+				<option value="100">طانطان</option>
+				<option value="102">طرفاية</option>
+				<option value="48">طنجة</option>
+				<option value="51">عرباوة</option>
+				<option value="6">عين الشعير</option>
+				<option value="32">فاس</option>
+				<option value="1">فكيك</option>
+				<option value="59">قصبة تادل</option>
+				<option value="77">قلعة السراغنة</option>
+				<option value="56">قلعة مكونة</option>
+				<option value="11">كرسيف</option>
+				<option value="98">كلميم</option>
+				<option value="31">كلميمة</option>
+				<option value="84">مراكش</option>
+				<option value="43">مكناس</option>
+				<option value="9">مليلية</option>
+				<option value="58">مولاي بوعزة</option>
+				<option value="36">مولاي يعقوب</option>
+				<option value="29">ميدلت</option>
+				<option value="16">ميسور</option>
+				<option value="63">هسكورة</option>
+				<option value="21">واد أمليل</option>
+				<option value="64">واد زم</option>
+				<option value="2">وجدة</option>
+				<option value="71">ورزازات</option>
+				<option value="44">وزان</option>
+
+				<!--<option value="95">Agadir</option>-->
+				<!--<option value="87">Aghram</option>-->
+				<!--<option value="6">Ain Chair</option>-->
+				<!--<option value="85">Akka</option>-->
+				<!--<option value="14">Aknoul</option>-->
+				<!--<option value="107">Alnif</option>-->
+				<!--<option value="109">Aousserd</option>-->
+				<!--<option value="57">Araich</option>-->
+				<!--<option value="51">Arbaoua</option>-->
+				<!--<option value="19">Arfoud</option>-->
+				<!--<option value="94">Assa</option>-->
+				<!--<option value="54">Assila</option>-->
+				<!--<option value="86">Azemour</option>-->
+				<!--<option value="65">Azilal</option>-->
+				<!--<option value="37">Azrou</option>-->
+				<!--<option value="73">Ben Slimane</option>-->
+				<!--<option value="82">Bengrire</option>-->
+				<!--<option value="62">Beni Mellal</option>-->
+				<!--<option value="5">Berkane</option>-->
+				<!--<option value="78">Berrchid</option>-->
+				<!--<option value="3">Bouaarfa</option>-->
+				<!--<option value="10">Bouanane</option>-->
+				<!--<option value="108">Boujad</option>-->
+				<!--<option value="104">Boujdour</option>-->
+				<!--<option value="28">Boulemane</option>-->
+				<!--<option value="18">Bourd</option>-->
+				<!--<option value="12">Boutagit</option>-->
+				<!--<option value="74">Bouznika</option>-->
+				<!--<option value="80">Casablanca</option>-->
+				<!--<option value="38">Chefchaouan</option>-->
+				<!--<option value="111">Chtouka Ait Baha</option>-->
+				<!--<option value="105">Dakhla</option>-->
+				<!--<option value="72">Demnat</option>-->
+				<!--<option value="41">El Hajeb</option>-->
+				<!--<option value="15">El Hoceima</option>-->
+				<!--<option value="88">El Jadida</option>-->
+				<!--<option value="23">Errachidia</option>-->
+				<!--<option value="97">Essaouira</option>-->
+				<!--<option value="1">Feguig</option>-->
+				<!--<option value="32">Fes</option>-->
+				<!--<option value="112">Fnideq</option>-->
+				<!--<option value="116">Fquih Ben Salah</option>-->
+				<!--<option value="98">Guelmim</option>-->
+				<!--<option value="31">Guelmima</option>-->
+				<!--<option value="11">Guersif</option>-->
+				<!--<option value="35">Ifrane</option>-->
+				<!--<option value="33">Imouzar Kandar</option>-->
+				<!--<option value="4">Jrada</option>-->
+				<!--<option value="56">Kalaa Megouna </option>-->
+				<!--<option value="77">Kelaat Esraghna</option>-->
+				<!--<option value="67">Kenitra</option>-->
+				<!--<option value="59">Kesbat Tadla</option>-->
+				<!--<option value="55">Khemissat</option>-->
+				<!--<option value="45">Khenifra</option>-->
+				<!--<option value="70">Khouribga</option>-->
+				<!--<option value="103">Laayoune</option>-->
+				<!--<option value="106">Lagouira</option>-->
+				<!--<option value="50">Laksar Lakbire</option>-->
+				<!--<option value="75">Lgara</option>-->
+				<!--<option value="84">Marrakech</option>-->
+				<!--<option value="43">Meknes</option>-->
+				<!--<option value="9">Melilla</option>-->
+				<!--<option value="25">Menzal Beni Yazgha</option>-->
+				<!--<option value="63">Meskoura</option>-->
+				<!--<option value="29">Midelet</option>-->
+				<!--<option value="16">Missour</option>-->
+				<!--<option value="76">Mohammedia</option>-->
+				<!--<option value="58">Moulay Bouaaza</option>-->
+				<!--<option value="36">Moulay Yaacoub</option>-->
+				<!--<option value="8">Nador</option>-->
+				<!--<option value="71">Ouarzazate</option>-->
+				<!--<option value="44">Ouazzane</option>-->
+				<!--<option value="21">Oued Amlil</option>-->
+				<!--<option value="64">Oued Zem</option>-->
+				<!--<option value="2">Oujda</option>-->
+				<!--<option value="69">Rabat Sale</option>-->
+				<!--<option value="68">Remani</option>-->
+				<!--<option value="24">Rich</option>-->
+				<!--<option value="20">Rissani</option>-->
+				<!--<option value="92">Safi</option>-->
+				<!--<option value="39">Sebta</option>-->
+				<!--<option value="30">Sefrou</option>-->
+				<!--<option value="79">Settat</option>-->
+				<!--<option value="99">Sidi Ifni</option>-->
+				<!--<option value="46">Sidi Kacem</option>-->
+				<!--<option value="52">Sidi Slimane</option>-->
+				<!--<option value="60">Sidi Yahya Lgharb</option>-->
+				<!--<option value="113">Skhour Rehamna</option>-->
+				<!--<option value="101">Smara</option>-->
+				<!--<option value="53">Souq Arbia Gharb</option>-->
+				<!--<option value="91">Tafraout</option>-->
+				<!--<option value="81">Talouine</option>-->
+				<!--<option value="13">Tandit</option>-->
+				<!--<option value="48">Tanger</option>-->
+				<!--<option value="100">Tantan</option>-->
+				<!--<option value="26">Taounat</option>-->
+				<!--<option value="7">Taourirt</option>-->
+				<!--<option value="90">Taroudant</option>-->
+				<!--<option value="83">Tata</option>-->
+				<!--<option value="17">Taza</option>-->
+				<!--<option value="22">Tehla</option>-->
+				<!--<option value="102">Terfaya</option>-->
+				<!--<option value="40">Tetouan</option>-->
+				<!--<option value="61">Tiflet</option>-->
+				<!--<option value="110">Tinghir</option>-->
+				<!--<option value="34">Tinjdad</option>-->
+				<!--<option value="27">Tissa</option>-->
+				<!--<option value="47">Tizi Ousli</option>-->
+				<!--<option value="96">Tiznit</option>-->
+				<!--<option value="89">Youssoufia</option>-->
+				<!--<option value="93">Zag</option>-->
+				<!--<option value="49">Zagoura</option>-->
+				<!--<option value="42">Zerhoune</option>-->
+			</select>
+		</div>
+	</div>
 </div>
 <footer>
-  <p id="infos" style="text-align: right;border-color: black;margin-bottom: 0px;font-size: 10px;padding-right: 4px;">Copyright 2018, Rabat-Morocco_v0.1</p>
+  <p id="infos" style="text-align: right; border-color: black; margin-bottom: 0px; font-size: 10px; padding-right: 4px; font-weight: bold;" data-toggle="tooltip" data-placement="top" title="double clic here to change the city !!">Copyright 2018, Rabat-Morocco_v0.1</p>
 </footer>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/momentJS.js"></script>
+<script src="js/utils.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

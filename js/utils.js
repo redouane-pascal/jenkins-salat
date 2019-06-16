@@ -87,7 +87,7 @@ function showNotify() {
 	let cityId = 80;
 	let sobh, dohr, asr, maghreb, isha;
 
-	if (localStorage.getItem('cityId') != undefined) {
+	if (localStorage.getItem('cityId') != null) {
 		cityId = localStorage.getItem('cityId');
 	}
 
@@ -113,6 +113,8 @@ function showNotify() {
 					maghreb = localStorage.getItem("Maghreb");
 				if (localStorage.getItem("Isha") != undefined)
 					isha = localStorage.getItem("Isha");
+					
+				showBars();
 				setBadgeText(sobh, dohr, asr, maghreb, isha);
 			} else if ( (dayNotif == null) || (!dayNotif) || (currentDate != dayNotif) ){
 				let currentMonth = getCurrentMonth();  // 6;
@@ -223,13 +225,19 @@ function showBars(){
 		nbMinutesToDisplay = 60*(maxHour - minHour);
 
 		// Récupérer le nom de la ville choisie
-		let cityId = localStorage.getItem('cityId') != undefined ? localStorage.getItem('cityId') : "80";
-		fetch('https://maroc-salat.herokuapp.com/city/'+cityId+'?lang=fr')
+		let cityName = localStorage.getItem('cityName');
+		if(null == cityName){
+			let cityId = localStorage.getItem('cityId') != undefined ? localStorage.getItem('cityId') : "80";
+			fetch('https://maroc-salat.herokuapp.com/city/'+cityId+'?lang=ar')
 			.then(response => response.json())
 			.then(data => {
-				let cityName = data.name;
-				$("p").text(cityName+', le '+ moment().format('DD/MM/YYYY'))
+				cityName = data.name;
+				localStorage.setItem('cityName', cityName);		
+				$("p").text(cityName + ' - '+ moment().format('DD/MM/YYYY'));
 			});
+		}else{		
+			$("p").text(cityName + ' - '+ moment().format('DD/MM/YYYY'));
+		}
 
 		var minSobh = getMinuteByPrayerTime(sobh);
 		var percentSobh = getPercentByMinPrayerTime(minSobh);
@@ -268,8 +276,6 @@ function showBars(){
 		$("#divSalatTime4").width((parseFloat(percentMaghreb) - 0.4).toFixed(2) + "%");
 		$("#divSalatTime5").width((parseFloat(percentIsha) - 0.4).toFixed(2) + "%");
 	}
-
-	showTodayBar();
 }
 
 function showTodayBar(){

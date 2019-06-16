@@ -5,6 +5,7 @@ localStorage.removeItem('Maghreb');
 localStorage.removeItem('Asr');
 localStorage.removeItem('Dohr');
 localStorage.removeItem('Sobh');
+localStorage.removeItem('cities');
 
 // Repeat every 10 seconds
 showNotify();

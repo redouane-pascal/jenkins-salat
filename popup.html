@@ -1,90 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+  </head>
 
-<head>
-	<title>Bootstrap Example</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-</head>
+  <body
+    style="overflow: visible !important; background-image: url('/img/bg.png');"
+  >
+    <div id="divContainer" class="box container">
+      <div id="divPrayerNames" class="progress">
+        <div
+          id="salat0"
+          class="progress-bar progress-bar-striped active"
+          role="progressbar"
+          aria-valuenow="40"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="background-color: #007eff;"
+        ></div>
+        <div
+          id="salat1"
+          class="progress-bar progress-bar-striped active"
+          role="progressbar"
+          aria-valuenow="40"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="background-color: #ffa500c7;"
+        >
+          <span class="prayerTitle">الصبح</span>
+        </div>
+        <div
+          id="salat2"
+          class="progress-bar progress-bar-striped active"
+          role="progressbar"
+          aria-valuenow="40"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="background-color: #00BCD4;"
+        >
+          <span class="prayerTitle">الظهر</span>
+        </div>
+        <div
+          id="salat3"
+          class="progress-bar progress-bar-striped active"
+          role="progressbar"
+          aria-valuenow="40"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="background-color: #FF9800;"
+        >
+          <span class="prayerTitle">العصر</span>
+        </div>
+        <div
+          id="salat4"
+          class="progress-bar progress-bar-striped active"
+          role="progressbar"
+          aria-valuenow="40"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="background-color: #cc7272;"
+        >
+          <span class="prayerTitle">المغرب</span>
+        </div>
+        <div
+          id="salat5"
+          class="progress-bar progress-bar-striped active"
+          role="progressbar"
+          aria-valuenow="40"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="background-color: #061194;"
+        >
+          <span class="prayerTitle" style="color: white !important;"
+            >العشاء</span
+          >
+        </div>
+      </div>
+      <div id="divTodayBar" class="progress">
+        <div
+          id="hourBar"
+          class="progress-bar progress-bar-striped active"
+          role="progressbar"
+          aria-valuenow="40"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <span id="currentHour"></span>
+          <img id="clock" src="/img/clock.png" />
+        </div>
+      </div>
+      <div id="divPrayerTimes" class="progress">
+        <div id="divSalatTime1" class="divHour">
+          <span id="salatTime1" class="hour">--:--</span>
+        </div>
+        <div id="divSalatTime2" class="divHour">
+          <span id="salatTime2" class="hour">--:--</span>
+        </div>
+        <div id="divSalatTime3" class="divHour">
+          <span id="salatTime3" class="hour">--:--</span>
+        </div>
+        <div id="divSalatTime4" class="divHour">
+          <span id="salatTime4" class="hour">--:--</span>
+        </div>
+        <div id="divSalatTime5" class="divHour">
+          <span id="salatTime5" class="hour">--:--</span>
+        </div>
+        <div id="divSalatTime6" class="divHour">
+          <span id="salatTime5" class="hour">&nbsp;</span>
+        </div>
+      </div>
 
-<body style="overflow: visible !important; background-image: url('/img/bg.png');">
+      <div id="divParam">
+        <div class="form-group divCity">
+          <a id="closeBtn" href="#" title="إختيار المدينة">
+            <img id="showCities" src="/img/svg_md-locate.svg" />
+          </a>
+          <select id="choosedCity" class="form-control"></select>
+        </div>
+      </div>
 
-	<div id="divContainer" class="box container">
+      <div id="cityName">
+        <p id="infos" data-toggle="tooltip" data-placement="top">
+          Réalisé par Radwan BASQUAL
+        </p>
+      </div>
 
-		<div id="divPrayerNames" class="progress">
-			<div id="salat0" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40"
-				aria-valuemin="0" aria-valuemax="100" style="background-color: #007eff;">
-			</div>
-			<div id="salat1" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40"
-				aria-valuemin="0" aria-valuemax="100" style="background-color: #ffa500c7;">
-				<span class="prayerTitle">الصبح</span>
-			</div>
-			<div id="salat2" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40"
-				aria-valuemin="0" aria-valuemax="100" style="background-color: #00BCD4;">
-				<span class="prayerTitle">الظهر</span>
-			</div>
-			<div id="salat3" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40"
-				aria-valuemin="0" aria-valuemax="100" style="background-color: #FF9800;">
-				<span class="prayerTitle">العصر</span>
-			</div>
-			<div id="salat4" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40"
-				aria-valuemin="0" aria-valuemax="100" style="background-color: #cc7272;">
-				<span class="prayerTitle">المغرب</span>
-			</div>
-			<div id="salat5" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40"
-				aria-valuemin="0" aria-valuemax="100" style="background-color: #061194;">
-				<span class="prayerTitle" style="color: white !important;">العشاء</span>
-			</div>
-		</div>
-		<div id="divTodayBar" class="progress">
-			<div id="hourBar" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40"
-				aria-valuemin="0" aria-valuemax="100">
-				<span id="currentHour"></span>
-				<img id="clock" src="/img/clock.png" style="padding-left: 6px;">
-			</div>
-		</div>
-		<div id="divPrayerTimes" class="progress">
-			<div id="divSalatTime1" class="divHour">
-				<span id="salatTime1" class="hour">--:--</span>
-			</div>
-			<div id="divSalatTime2" class="divHour">
-				<span id="salatTime2" class="hour">--:--</span>
-			</div>
-			<div id="divSalatTime3" class="divHour">
-				<span id="salatTime3" class="hour">--:--</span>
-			</div>
-			<div id="divSalatTime4" class="divHour">
-				<span id="salatTime4" class="hour">--:--</span>
-			</div>
-			<div id="divSalatTime5" class="divHour">
-				<span id="salatTime5" class="hour">--:--</span>
-			</div>
-			<div id="divSalatTime6" class="divHour">
-				<span id="salatTime5" class="hour">&nbsp;</span>
-			</div>
-		</div>
+      <div id="divLoadingContainer">
+        <div id="divLoading">Chargement</div>
+        <div class="preloader-1">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+          <span class="line line-4"></span>
+          <span class="line line-5"></span>
+          <span class="line line-6"></span>
+          <span class="line line-7"></span>
+          <span class="line line-8"></span>
+          <span class="line line-9"></span>
+        </div>
+      </div>
+    </div>
 
-		<div id="divParam">
-			<div class="form-group divCity">
-				<a id="closeBtn" href="#" title="إختيار المدينة">
-					<img id="showCities" src="/img/svg_md-locate.svg"/>
-				</a>
-				<select id="choosedCity" class="form-control"></select>
-			</div>
-		</div>
-
-		<div id="cityName">
-			<p id="infos" data-toggle="tooltip" data-placement="top">Réalisé par Radwan BASQUAL</p>
-		</div>
-	</div>
-
-	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/momentJS.js"></script>
-	<script src="js/utils.js"></script>
-	<script src="js/main.js"></script>
-</body>
-
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/momentJS.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

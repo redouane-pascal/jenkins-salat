@@ -88,9 +88,9 @@
 }
 
 .hour {
-  text-shadow: 1px 1px lightgrey;
+  text-shadow: 1px 1px #f2dea0;
   font-weight: bold;
-  color: black;
+  color: #643307;
 }
 
 .prayerTitle {
@@ -150,12 +150,12 @@
 
 #infos {
   text-align: right;
+  text-shadow: 1px 1px #f2dea0;
+  color: #643307;
   margin-bottom: 0px;
   font-size: 14px;
   padding-right: 40px;
   font-weight: bold;
-  color: black;
-  text-shadow: 1px 1px lightgrey;
 }
 
 #divContainer {

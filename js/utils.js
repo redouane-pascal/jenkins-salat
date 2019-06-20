@@ -303,6 +303,10 @@ function showBars() {
       parseFloat(percentIsha);
     var toFullBar = 100 - total;
     $("#salat5").width(toFullBar.toFixed(2) + "%");
+    // $("#salat5").css(
+    //   "background-color",
+    //   "linear-gradient(to right, #0400ff , #333) !important;"
+    // );
 
     document.getElementById("salatTime1") != null
       ? (document.getElementById("salatTime1").textContent = sobh)

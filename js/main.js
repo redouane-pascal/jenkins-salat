@@ -50,6 +50,7 @@ function init() {
 
   // Add change eventlistener
   select.addEventListener("change", function() {
+    showLoadingPage(true);
     localStorage.setItem("cityId", select.value);
     localStorage.removeItem("cityName");
     localStorage.removeItem("dayNotif");

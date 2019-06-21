@@ -1,10 +1,0 @@
-
-bjavascript:UnusedVariable"6Remove the declaration of the unused 'title' variable.(»€ÂÓ8´ğãã´-
-Hjavascript:S1442`" Remove this usage of alert(...).(Ô¶×»ùÿÿÿÿ8ÓíÖ‚µ-
-ojavascript:UnusedVariable©"=Remove the declaration of the unused 'notification' variable.(ÀÑÙúÿÿÿÿ8ÓíÖ‚µ-
-gjavascript:UnusedVariable"6Remove the declaration of the unused 'count' variable.(™˜–ïüÿÿÿÿ8´ğãã´-
-[javascript:S1854"8Remove this useless assignment to local variable "title"(»€ÂÓ8´ğãã´-
-tjavascript:S2589("LRefactor this code so that this expression does not always evaluate to true.(ü”øÿÿÿÿ8ãİ§ƒµ-
-hjavascript:S1854©"?Remove this useless assignment to local variable "notification"(ÀÑÙúÿÿÿÿ8ÓíÖ‚µ-
-ijavascript:UnusedVariable"=Remove the declaration of the unused 'notification' variable.(ãòô8´ğãã´-
-bjavascript:S1854"?Remove this useless assignment to local variable "notification"(ãòô8´ğãã´-

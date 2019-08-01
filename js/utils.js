@@ -233,10 +233,10 @@ function showBars() {
                     let city = data.filter(byId);
                     cityName = city[0].name_ar;
                     localStorage.setItem('cityName', cityName);
-                    $("p").text(cityName + ' - ' + moment().format('DD/MM/YYYY'));
+                    $("#infos").text(cityName + ' - ' + moment().format('DD/MM/YYYY'));
                 });
         } else {
-            $("p").text(cityName + ' - ' + moment().format('DD/MM/YYYY'));
+            $("#infos").text(cityName + ' - ' + moment().format('DD/MM/YYYY'));
         }
 
         var minSobh = getMinuteByPrayerTime(sobh);

@@ -1,6 +1,6 @@
 {
     "name": "مواقيت الصلاة بالمغرب",
-    "version": "0.2",
+    "version": "0.4",
     "manifest_version": 2,
     "description": "The first extension that I made with LOVE.",
     "browser_action": {

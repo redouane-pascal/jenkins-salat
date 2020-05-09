@@ -84,7 +84,7 @@ function minutesToHourFormat(minutes) {
 }
 
 function showNotify() {
-    let cityId = 80;
+    let cityId = 1;
     let sobh, dohr, asr, maghreb, isha;
 
     if (localStorage.getItem('cityId') != null) {
@@ -225,7 +225,7 @@ function showBars() {
         // Récupérer le nom de la ville choisie
         let cityName = localStorage.getItem('cityName');
         if ((null == cityName) || (cityName == "undefined")) {
-            let cityId = localStorage.getItem('cityId') != undefined ? localStorage.getItem('cityId') : "80";
+            let cityId = localStorage.getItem('cityId') != undefined ? localStorage.getItem('cityId') : "1";
             fetch('cities.json')
                 .then(response => response.json())
                 .then(data => {

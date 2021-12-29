@@ -3685,344 +3685,344 @@
       "city":"Brossard"
    },
    {
-      "fajr":"05:46",
+      "day":"2021-12-01",
+      "id":1,
+      "city":"Brossard",
+      "fajr":"05:45",
       "chorouq":"07:13",
       "dhuhr":"11:43",
-      "asr":"13:53",
+      "asr":"13:54",
       "maghrib":"16:13",
-      "ishae":"17:41",
-      "day":"2020-12-01",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:41"
    },
    {
-      "fajr":"05:47",
+      "day":"2021-12-02",
+      "id":1,
+      "city":"Brossard",
+      "fajr":"05:46",
       "chorouq":"07:14",
       "dhuhr":"11:43",
       "asr":"13:53",
       "maghrib":"16:13",
-      "ishae":"17:40",
-      "day":"2020-12-02",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
-      "fajr":"05:48",
+      "day":"2021-12-03",
+      "id":1,
+      "city":"Brossard",
+      "fajr":"05:47",
       "chorouq":"07:15",
       "dhuhr":"11:44",
       "asr":"13:53",
       "maghrib":"16:13",
-      "ishae":"17:40",
-      "day":"2020-12-03",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-04",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:48",
       "chorouq":"07:16",
       "dhuhr":"11:44",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-04",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-05",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:49",
       "chorouq":"07:17",
       "dhuhr":"11:45",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-05",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-06",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:50",
       "chorouq":"07:18",
       "dhuhr":"11:45",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-06",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-07",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:51",
       "chorouq":"07:19",
       "dhuhr":"11:45",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-07",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-08",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:52",
       "chorouq":"07:20",
       "dhuhr":"11:46",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-08",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-09",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:53",
       "chorouq":"07:21",
       "dhuhr":"11:46",
       "asr":"13:53",
-      "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-09",
-      "id":1,
-      "city":"Brossard"
+      "maghrib":"16:11",
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-10",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:54",
       "chorouq":"07:22",
       "dhuhr":"11:47",
       "asr":"13:53",
-      "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-10",
-      "id":1,
-      "city":"Brossard"
+      "maghrib":"16:11",
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-11",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:54",
       "chorouq":"07:23",
       "dhuhr":"11:47",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-11",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-12",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:55",
       "chorouq":"07:24",
       "dhuhr":"11:48",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-12",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-13",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:56",
       "chorouq":"07:25",
       "dhuhr":"11:48",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:40",
-      "day":"2020-12-13",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:40"
    },
    {
+      "day":"2021-12-14",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:57",
       "chorouq":"07:25",
       "dhuhr":"11:49",
       "asr":"13:53",
       "maghrib":"16:12",
-      "ishae":"17:41",
-      "day":"2020-12-14",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:41"
    },
    {
+      "day":"2021-12-15",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:57",
       "chorouq":"07:26",
       "dhuhr":"11:49",
       "asr":"13:54",
       "maghrib":"16:12",
-      "ishae":"17:41",
-      "day":"2020-12-15",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:41"
    },
    {
+      "day":"2021-12-16",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:58",
       "chorouq":"07:27",
       "dhuhr":"11:50",
       "asr":"13:54",
       "maghrib":"16:12",
-      "ishae":"17:41",
-      "day":"2020-12-16",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:41"
    },
    {
+      "day":"2021-12-17",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:59",
       "chorouq":"07:28",
       "dhuhr":"11:50",
       "asr":"13:54",
       "maghrib":"16:13",
-      "ishae":"17:42",
-      "day":"2020-12-17",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:42"
    },
    {
+      "day":"2021-12-18",
+      "id":1,
+      "city":"Brossard",
       "fajr":"05:59",
       "chorouq":"07:28",
       "dhuhr":"11:51",
       "asr":"13:55",
       "maghrib":"16:13",
-      "ishae":"17:42",
-      "day":"2020-12-18",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:42"
    },
    {
+      "day":"2021-12-19",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:00",
       "chorouq":"07:29",
       "dhuhr":"11:51",
       "asr":"13:55",
-      "maghrib":"16:14",
-      "ishae":"17:42",
-      "day":"2020-12-19",
-      "id":1,
-      "city":"Brossard"
+      "maghrib":"16:13",
+      "ishae":"17:42"
    },
    {
+      "day":"2021-12-20",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:00",
       "chorouq":"07:29",
       "dhuhr":"11:52",
       "asr":"13:56",
       "maghrib":"16:14",
-      "ishae":"17:43",
-      "day":"2020-12-20",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:43"
    },
    {
+      "day":"2021-12-21",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:01",
       "chorouq":"07:30",
       "dhuhr":"11:52",
       "asr":"13:56",
       "maghrib":"16:14",
-      "ishae":"17:43",
-      "day":"2020-12-21",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:43"
    },
    {
+      "day":"2021-12-22",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:01",
       "chorouq":"07:30",
       "dhuhr":"11:53",
       "asr":"13:57",
       "maghrib":"16:15",
-      "ishae":"17:44",
-      "day":"2020-12-22",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:44"
    },
    {
+      "day":"2021-12-23",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:02",
       "chorouq":"07:31",
       "dhuhr":"11:53",
       "asr":"13:57",
-      "maghrib":"16:16",
-      "ishae":"17:44",
-      "day":"2020-12-23",
-      "id":1,
-      "city":"Brossard"
+      "maghrib":"16:15",
+      "ishae":"17:44"
    },
    {
+      "day":"2021-12-24",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:02",
       "chorouq":"07:31",
       "dhuhr":"11:54",
       "asr":"13:58",
       "maghrib":"16:16",
-      "ishae":"17:45",
-      "day":"2020-12-24",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:45"
    },
    {
+      "day":"2021-12-25",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:03",
       "chorouq":"07:32",
       "dhuhr":"11:54",
       "asr":"13:58",
       "maghrib":"16:17",
-      "ishae":"17:46",
-      "day":"2020-12-25",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:46"
    },
    {
+      "day":"2021-12-26",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:03",
       "chorouq":"07:32",
       "dhuhr":"11:55",
       "asr":"13:59",
       "maghrib":"16:17",
-      "ishae":"17:46",
-      "day":"2020-12-26",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:46"
    },
    {
+      "day":"2021-12-27",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:03",
       "chorouq":"07:32",
       "dhuhr":"11:55",
       "asr":"14:00",
       "maghrib":"16:18",
-      "ishae":"17:47",
-      "day":"2020-12-27",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:47"
    },
    {
+      "day":"2021-12-28",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:04",
       "chorouq":"07:32",
       "dhuhr":"11:56",
       "asr":"14:00",
       "maghrib":"16:19",
-      "ishae":"17:48",
-      "day":"2020-12-28",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:47"
    },
    {
-      "fajr":"06:04",
-      "chorouq":"07:32",
-      "dhuhr":"11:56",
-      "asr":"14:01",
-      "maghrib":"16:20",
-      "ishae":"17:48",
-      "day":"2020-12-29",
+      "day":"2021-12-29",
       "id":1,
-      "city":"Brossard"
-   },
-   {
+      "city":"Brossard",
       "fajr":"06:04",
       "chorouq":"07:33",
-      "dhuhr":"11:57",
-      "asr":"14:02",
-      "maghrib":"16:21",
-      "ishae":"17:49",
-      "day":"2020-12-30",
-      "id":1,
-      "city":"Brossard"
+      "dhuhr":"11:56",
+      "asr":"14:01",
+      "maghrib":"16:19",
+      "ishae":"17:48"
    },
    {
+      "day":"2021-12-30",
+      "id":1,
+      "city":"Brossard",
+      "fajr":"06:04",
+      "chorouq":"07:33",
+      "dhuhr":"11:56",
+      "asr":"14:02",
+      "maghrib":"16:20",
+      "ishae":"17:49"
+   },
+   {
+      "day":"2021-12-31",
+      "id":1,
+      "city":"Brossard",
       "fajr":"06:04",
       "chorouq":"07:33",
       "dhuhr":"11:57",
       "asr":"14:03",
       "maghrib":"16:21",
-      "ishae":"17:50",
-      "day":"2020-12-31",
-      "id":1,
-      "city":"Brossard"
+      "ishae":"17:50"
    }
 ]

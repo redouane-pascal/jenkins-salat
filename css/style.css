@@ -90,7 +90,7 @@
 .hour {
   text-shadow: 1px 1px #f2dea0;
   font-weight: bold;
-  color: #643307;
+  color: #00007a;
 }
 
 .prayerTitle {
@@ -105,7 +105,7 @@
 }
 
 #divParam {
-  background-color: rgb(201, 137, 16);
+  background-color: #bbeeff;
   position: absolute;
   z-index: 12;
   overflow: hidden;
@@ -150,8 +150,8 @@
 
 #infos {
   text-align: right;
-  text-shadow: 1px 1px #f2dea0;
-  color: #643307;
+  text-shadow: 1px 1px #a0f2f2;
+  color: #000000;
   margin-bottom: 0px;
   font-size: 14px;
   padding-right: 40px;
